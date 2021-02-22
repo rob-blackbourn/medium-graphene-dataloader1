@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "medium-graphene-dataloader1"
+version = "0.1.0"
+description = "A dataloader example for Graphene v3"
+authors = ["Rob Blackbourn <rob.blackbourn@gmail.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [
+    { include = "medium_graphene_dataloader" }
+]
+repository = "https://github.com/rob-blackbourn/medium-graphene-dataloader1"
+
+[tool.poetry.scripts]
+start-server = "medium_graphene_dataloader.server:start_server"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+bareasgi-graphql-next = {version = "^3.12.1", extras = ["graphene"]}
+Hypercorn = "^0.11.1"
+aiomysql = "^0.0.21"
+aiodataloader = "^0.2.0"
+bareasgi-cors = "^3.1.1"
+
+[tool.poetry.dev-dependencies]
+pylint = "^2.6.0"
+mypy = "^0.782"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
